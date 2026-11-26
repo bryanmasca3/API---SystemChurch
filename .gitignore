@@ -1,0 +1,6 @@
+node_modules/
+.env
+!.env.example
+
+# SQL antiguo (Postgres) con datos personales de ejemplo: no se publica
+syntax.sql

@@ -1,0 +1,39 @@
+{
+  "name": "iep-backend",
+  "version": "2.0.0",
+  "description": "API REST de gestión de la IEP (miembros, departamentos, servicios, asistencias, reuniones)",
+  "main": "src/server.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrar": "node src/libs/migraciones/2026-11-24-correcciones-modelo.js",
+    "cargar:ubigeo": "node src/libs/migraciones/cargar-ubigeo.js",
+    "migrar:historial": "node src/libs/migraciones/2026-11-25-historial-membresia.js",
+    "cargar:datos": "node src/libs/migraciones/cargar-datos-iniciales.js",
+    "test": "node --test --test-concurrency=1 \"tests/**/*.test.js\""
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "joi": "^18.3.2",
+    "joi-objectid": "^4.0.2",
+    "joi-to-swagger": "^6.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.10",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^13.1.0",
+    "mongodb-memory-server": "^11.4.0",
+    "nodemon": "^3.1.14"
+  }
+}
